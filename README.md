@@ -1,0 +1,71 @@
+# ofxTanim
+
+`ofxTanim` is an openFrameworks addon that integrates the `tanim` timeline/editor workflow with OF projects.
+
+It is designed for projects that want:
+- timeline-based animation tracks,
+- runtime playback,
+- editor controls through ImGui,
+- reflection-based binding of component fields.
+
+## Requirements
+
+- openFrameworks `0.12.x` (or compatible).
+- `ofxImGui`
+- `ofxEnTT`
+
+Some examples may use additional addons (for example `ofxSurfingImGui`).
+
+## Repository Layout
+
+- `src/` -> addon integration sources.
+- `libs/include/tanim/` -> core `tanim` headers.
+- `libs/external/` -> bundled third-party headers used by `tanim`.
+- `docs/` -> integration docs and type support references.
+- `example-basic/` -> reference demo for timeline + parameter bridge.
+- `example-minimal/` -> minimal cube demo using `glm::vec3` position/rotation and callbacks.
+
+## Quick Start
+
+1. Add `ofxTanim` to your OF project.
+2. Ensure `ofxImGui` and `ofxEnTT` are also added.
+3. Register your animatable component fields with Tanim reflection macros.
+4. Create/open timeline data and drive playback in `update()`.
+
+For a working baseline, start from:
+- `addons/ofxTanim/example-basic`
+- `addons/ofxTanim/example-minimal`
+
+## Example Notes
+
+### `example-basic`
+- Demonstrates timeline setup and parameter synchronization patterns.
+- Includes a richer manager flow for bool/float/int/bang style controls.
+
+### `example-minimal`
+- Focused demo with a simple cube scene.
+- Animates `glm::vec3` position and `glm::vec3` rotation.
+- Uses `SurfingTimelineManager` to auto-register supported `ofParameter` values.
+- Emits callbacks for bool toggles and bang triggers.
+
+## Build
+
+Use the standard openFrameworks workflow:
+
+- Generate/build with Project Generator and your IDE, or
+- Build using the provided OF make/msbuild flow inside each example folder.
+
+`example-minimal` includes `build-msbuild.ps1` to locate `MSBuild.exe` automatically on Windows.
+
+## Documentation
+
+Detailed references are available in:
+- `docs/README.md`
+- `docs/integration-reference.md`
+- `docs/supported-types.md`
+- `docs/ui-shortcuts.md`
+
+## Notes
+
+- The addon relies on OF's `glm`/JSON environment and avoids local duplicate includes to reduce version conflicts.
+- If you update external dependencies, keep the OF toolchain and addon dependencies in sync.
