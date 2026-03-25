@@ -1,7 +1,7 @@
 # ofxTanim
 
 ### `ofxTanim` is a WIP openFrameworks addon that integrates the [tanim](https://github.com/hegworks/tanim) timeline/editor workflow with OF projects.  
-### The project is still in its early stages. It was developed using `OpenAI Codex` with the `Codex GPT 5.3` model.  
+### The project is still in its early stages, and will probably end up abandoned as a coding experiment involving Agents and OF. It was developed in 2-3 sessions using `OpenAI Codex` windows app with the `Codex GPT 5.3` model.  
 ### My idea was to pass `ofParameters` to a manager class that would internally handle the rendering of `ImGui` and the Talim classes.  
 
 ----
