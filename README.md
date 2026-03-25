@@ -1,6 +1,8 @@
 # ofxTanim
 
-`ofxTanim` is an openFrameworks addon that integrates the `tanim` timeline/editor workflow with OF projects.
+`ofxTanim` is a WIP openFrameworks addon that integrates the [tanim](https://github.com/hegworks/tanim) timeline/editor workflow with OF projects.  
+The project is still in its early stages. It was developed using `OpenAI Codex` with the `Codex GPT 5.3` model.  
+My idea was to pass `ofParameters` to a manager class that would internally handle the rendering of `ImGui` and the Talim classes.  
 
 It is designed for projects that want:
 - timeline-based animation tracks,
@@ -10,7 +12,8 @@ It is designed for projects that want:
 
 ## Requirements
 
-- openFrameworks `0.12.x` (or compatible).
+- openFrameworks `0.12.1`.
+- Tested in Windows 11 / Visual Studio 2026.
 - `ofxImGui`
 - `ofxEnTT`
 
